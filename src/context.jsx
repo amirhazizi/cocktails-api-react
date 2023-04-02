@@ -1,15 +1,28 @@
-import React, { useState, useContext, useEffect } from 'react'
-import { useCallback } from 'react'
-
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
+import React, { useState, useContext, useEffect } from "react"
+import { useCallback } from "react"
+import axios from "axios"
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="
+const autoFetch = axios.create({
+  baseURL: url,
+  headers: { Accept: "application/json" },
+})
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-  return <AppContext.Provider value='hello'>{children}</AppContext.Provider>
+  const [isLoading, setIsLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState("a")
+  const [cocktails, setCocktails] = useState([])
+  return (
+    <AppContext.Provider
+      value={{ isLoading, searchTerm, setSearchTerm, cocktails }}
+    >
+      {children}
+    </AppContext.Provider>
+  )
 }
-// make sure use
-export const useGlobalContext = () => {
+
+const useGlobalContext = () => {
   return useContext(AppContext)
 }
 
-export { AppContext, AppProvider }
+export { AppContext, AppProvider, useGlobalContext }

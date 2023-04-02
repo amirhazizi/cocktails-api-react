@@ -401,9 +401,9 @@ Cocktail
 .loader:after {
   background: transparent;
   -webkit-animation: load1 1s infinite ease-in-out;
-  animation: load1 1s infinite ease-in-out;
+  animation: load1 1300ms infinite ease-in-out;
   width: 1em;
-  height: 4em;
+  height: 2em;
 }
 
 .loader {
@@ -412,7 +412,7 @@ Cocktail
   margin: 88px auto;
   margin-top: 20rem;
   position: relative;
-  font-size: 3rem;
+  font-size: 2rem;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
