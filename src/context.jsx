@@ -1,9 +1,10 @@
 import React, { useState, useContext, useEffect } from "react"
 import { useCallback } from "react"
 import axios from "axios"
-const url = "https://www.thecocktaildb.com/api/json/v1/1/"
+const url = "https://www.thecocktaildb.com/api/json/v1/1"
 const autoFetch = axios.create({
   baseURL: url,
+  headers: { Accept: "application/json" },
 })
 const AppContext = React.createContext()
 
@@ -14,23 +15,22 @@ const AppProvider = ({ children }) => {
   const fentchData = async () => {
     setIsLoading(true)
     try {
-      const { data } = await autoFetch(`search.php?s=${searchTerm}`)
-
-      if (data?.drinks) {
-        const { drinks } = data
-        const newCocktails = drinks.map((drink) => {
+      const { data } = await autoFetch(`/search.php?s=${searchTerm}`)
+      const { drinks } = data
+      if (drinks) {
+        const newCocktails = drinks.map((item) => {
           const {
             idDrink,
             strDrink,
             strDrinkThumb,
             strAlcoholic,
             strGlass,
-          } = drink
+          } = item
+
           return {
             id: idDrink,
             name: strDrink,
-            image,
-            strDrinkThumb,
+            image: strDrinkThumb,
             info: strAlcoholic,
             glass: strGlass,
           }
