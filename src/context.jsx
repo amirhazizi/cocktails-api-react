@@ -41,20 +41,15 @@ const AppProvider = ({ children }) => {
       }
       setIsLoading(false)
     } catch (error) {
-      console.log(error.response)
+      console.log(error)
       setIsLoading(false)
     }
   }
   useEffect(() => {
     fentchData()
-  }, [])
-  useEffect(() => {
-    fentchData()
   }, [searchTerm])
   return (
-    <AppContext.Provider
-      value={{ isLoading, searchTerm, setSearchTerm, cocktails }}
-    >
+    <AppContext.Provider value={{ isLoading, setSearchTerm, cocktails }}>
       {children}
     </AppContext.Provider>
   )
