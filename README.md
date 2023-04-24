@@ -1,9 +1,4 @@
-# About Project
 
-simple react project with context API and react router.
-
-from react udemy course.
-[link](https://www.udemy.com/course/react-tutorial-and-projects-course/)
 
 ## Installation
 
@@ -19,10 +14,12 @@ after installiation run this command to run the project
 npm run dev
 ```
 
-## About
+## About Project
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+simple react project with context API and react router.
+
+from react udemy course.
+[link](https://www.udemy.com/course/react-tutorial-and-projects-course/)
 
 Please make sure to update tests as appropriate.
 
