@@ -21,13 +21,11 @@ simple react project with context API and react router.
 from react udemy course.
 [link](https://www.udemy.com/course/react-tutorial-and-projects-course/)
 
-Please make sure to update tests as appropriate.
-
 ## Overview
 
-[](./public/screencapture-1.png)
+![](./public/screencapture-1.png)
 
-[](./public/screencapture-2.png)
+![](./public/screencapture-2.png)
 
 ## Preview Site
 
